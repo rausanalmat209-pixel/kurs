@@ -56,3 +56,17 @@
 - **Промпт:** Бүгінгі жаңа файлдарды (`docs/problem.md`, `docs/user-stories.md`, `PROMPTS_LOG.md`) GitHub-қа жіберу.
 - **Шешім:** Пайдаланушы тек жаңа файлдарды жіберуді растады («жаңа файлдарды ғана ия»).
 - **Нәтиже:** `docs/problem.md`, `docs/user-stories.md` және `PROMPTS_LOG.md` коммитке қосылып, GitHub репозиториіне жүктелді.
+
+
+## Жазба #11 — Негізгі объект (University) үшін Schema және Repository қабаттарын құру
+- **Промпт:** Негізгі объект үшін екі қабат жасау: `schemas/<object>.py` (`<Object>Create`, `<Object>Update`, `<Object>Read`) және `repositories/<object>_repository.py` (`list`, `get`, `create`, `save`, `delete`). Тек SQLAlchemy, `HTTPException` және бизнес-ережелерсіз. Service пен router жазылмайды. Алдымен жоспар ұсынылып, рұқсат алынды.
+- **Шешім:** Пайдаланушы жоспарды бекітіп, рұқсат берді («да»).
+- **Нәтиже:** 
+  - `backend/app/models/university.py` моделі құрылды.
+  - `backend/app/schemas/university.py` (`UniversityCreate`, `UniversityUpdate`, `UniversityRead`) схемалары жасалды (`id`, `owner`, `status` клиенттен қабылданбайды, `from_attributes=True` бапталды).
+  - `backend/app/repositories/university_repository.py` (`list`, `get`, `create`, `save`, `delete`) репозиторийі жасалды (тек SQLAlchemy, бизнес-ережелер мен `HTTPException` жоқ).
+
+## Жазба #12 — Жобаны жаңа GitHub репозиториіне (rausanalmat209-pixel/kurs) жүктеу
+- **Промпт:** «[rausanalmat209-pixel/kurs](https://github.com/rausanalmat209-pixel/kurs) проект скинь сюда»
+- **Шешім:** Пайдаланушының тікелей бұйрығымен өзгерістер коммитке қосылып, қашықтағы репозиторийге жіберіледі.
+- **Нәтиже:** GitHub қашықтағы сілтемесі `https://github.com/rausanalmat209-pixel/kurs.git` орнатылып, проект push жасалды.
